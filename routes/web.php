@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome'); 
 });
 
 Auth::routes();
@@ -24,4 +24,5 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/edit/{id}', [HomeController::class,'settings'])->name('edit');
+Route::post('edit', [HomeController::class,'update'])->name('edit');
 // Route::get('/edit/{id}', [HomeController::class,'settings']);

@@ -37,6 +37,16 @@ class HomeController extends Controller
         return view('edit', compact('user'));
     }
 
+    public function update(Request $req)
+    {
+        $data = User::find($req->id);
+        $data->name = $req->name;
+        $data->email = $req->email;
+        $data->name = $req->name;
+        $data->save();
+        return redirect('home');
+    }
+
 
     
 }
