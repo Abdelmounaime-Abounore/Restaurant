@@ -23,4 +23,5 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/edit', [HomeController::class,'settings'])->name('edit');
+Route::get('/edit/{id}', [HomeController::class,'settings'])->name('edit');
+// Route::get('/edit/{id}', [HomeController::class,'settings']);

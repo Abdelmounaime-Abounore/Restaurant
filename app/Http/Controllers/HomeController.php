@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use app\Models\User;
 
 class HomeController extends Controller
 {
@@ -26,9 +27,14 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function settings()
+    public function settings($id)
     {
-        return view('edit');
+        // dd($id) ;
+        $user = User::find($id);
+        // dd($user) ;
+        // dd( $user->email);
+        // return view('edit')->with('user', $user) ;
+        return view('edit', compact('user'));
     }
 
 
