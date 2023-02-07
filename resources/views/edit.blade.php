@@ -23,7 +23,7 @@
                     <div class="row py-2">
                         <div class="col-md-6">
                             <label for="password">Password</label>
-                            <input type="password" name="password" class="bg-light form-control" value={{$user->password}}>
+                            <input type="password" name="password" class="bg-light form-control">
                         </div>
                     </div>
                     <div class="py-3 pb-4 border-bottom">

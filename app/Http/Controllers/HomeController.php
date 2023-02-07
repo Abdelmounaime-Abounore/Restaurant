@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use app\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class HomeController extends Controller
 {
@@ -42,11 +43,8 @@ class HomeController extends Controller
         $data = User::find($req->id);
         $data->name = $req->name;
         $data->email = $req->email;
-        $data->name = $req->name;
+        $data->password = Hash::make($req->password);
         $data->save();
         return redirect('home');
     }
-
-
-    
 }
