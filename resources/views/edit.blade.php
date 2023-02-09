@@ -28,7 +28,7 @@
                     </div>
                     <div class="py-3 pb-4 border-bottom">
                         <button type="submit" class="btn btn-primary mr-3">Save Changes</button>
-                        <a class="btn border button mx-2" href="{{route ('home')}}">Cancel</a>
+                        <a class="btn border button mx-2" href="{{route ('meals.index')}}">Cancel</a>
                     </div>
                 </div>
             </form>

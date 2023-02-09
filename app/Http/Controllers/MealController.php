@@ -14,6 +14,8 @@ class MealController extends Controller
      */
     public function index()
     {
+        $meals = Meal::all();
+        return view('home',['meals'=>$meals]);
 
     }
 
@@ -40,7 +42,6 @@ class MealController extends Controller
 
     public function store(Request $request)
     {
-        // $data=array('name'=>$name,"category"=>$category,"description"=>$description,"price"=>$price,"photo"=>$photo);
         $data = new Meal;
         $data->name = $request->input('name');
         $data->category = $request->input('category');
@@ -48,7 +49,8 @@ class MealController extends Controller
         $data->price = $request->input('price');
         $data->photo = $request->input('photo');
         $data->save();
-        return redirect('home');
+        return redirect()
+            ->route('meals.index');
     }
     /**
      * Display the specified resource.

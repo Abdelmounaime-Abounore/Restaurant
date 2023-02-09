@@ -22,14 +22,14 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 Route::get('/edit/{id}', [HomeController::class,'settings'])->name('edit');
 
 Route::post('edit', [HomeController::class,'update'])->name('edit');
-// Route::get('/edit/{id}', [HomeController::class,'settings']);
+
 Route::get('/add-meals', function() {
     return view('add-meals');
-});
+})->name('meals.create');
     
 Route::post('/store-meals', [MealController::class, 'store']);
+
+Route::get('/home', [MealController::class, 'index'])->name('meals.index');

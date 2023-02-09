@@ -19,10 +19,10 @@
             <div class="collapse navbar-collapse mx-5" id="navbarNav">
                 <ul class="navbar-nav mx-5 w-75 d-flex justify-content-between">
                     <li class="nav-item mx-4">
-                        <a class="nav-link" href="home">Home</a>
+                        <a class="nav-link" href="{{ route('meals.index') }}">Home</a>
                     </li>
                     <li class="nav-item mx-4">
-                        <a class="nav-link" href="add-meals">Add Meals</a>
+                        <a class="nav-link" href="{{ route('meals.create') }}">Add Meals</a>
                     </li>
                     <li class="nav-item mx-4 dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
