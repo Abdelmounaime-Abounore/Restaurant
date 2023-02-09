@@ -18,14 +18,11 @@
             </button>
             <div class="collapse navbar-collapse mx-5" id="navbarNav">
                 <ul class="navbar-nav mx-5 w-75 d-flex justify-content-between">
-                    <li class="nav-item active mx-4">
-                        <a class="nav-link" href="./dashboard.php">Dashboard</a>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link" href="home">Home</a>
                     </li>
                     <li class="nav-item mx-4">
-                        <a class="nav-link" href="./home.php">Home</a>
-                    </li>
-                    <li class="nav-item mx-4">
-                        <a class="nav-link" href="./add.article.php">Add Articles</a>
+                        <a class="nav-link" href="add-meals">Add Meals</a>
                     </li>
                     <li class="nav-item mx-4 dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -38,7 +35,7 @@
                             
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();">
+                                    document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
                          

@@ -10819,7 +10819,14 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-article {
-  max-width: 75%;
+/* article {
+  max-width: 70%;
   margin: auto;
+  margin-top: 70px;
+} */
+img {
+  /* width:  40%;
+  height: 50%; */
+  width: 45%;
+  /* height: 95%; */
 }

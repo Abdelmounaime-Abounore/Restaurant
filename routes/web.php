@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MealController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -24,5 +25,11 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/edit/{id}', [HomeController::class,'settings'])->name('edit');
+
 Route::post('edit', [HomeController::class,'update'])->name('edit');
 // Route::get('/edit/{id}', [HomeController::class,'settings']);
+Route::get('/add-meals', function() {
+    return view('add-meals');
+});
+    
+Route::post('/store-meals', [MealController::class, 'store']);
