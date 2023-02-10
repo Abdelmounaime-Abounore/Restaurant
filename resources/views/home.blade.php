@@ -1,11 +1,12 @@
 @include('layouts.master')
     @foreach ($meals as $meal)
         <div class="d-block d-md-flex flex-row align-items-center w-75 m-auto my-5 p-3" style="background-color: rgb(248, 248, 230); border-radius: 10px">
-            <article class="">
+            <article class="mx-4">
                 <h2>{{ $meal->name }}</h2>
                 <h4>{{ $meal->category }}</h4>
                 <p>{{$meal->description}}</p>
-                <span class="text-success font-weight-bold" style="font-size: 15px">Price: {{$meal->price}} DHS</span>
+                <span class="text-success font-weight-bold" style="font-size: 15px">Price: {{$meal->price}} DHS</span> <br><br>
+                <a href="delete/{{ $meal->id }}" class="btn btn-danger"> Delete </a>
             </article>
             <img class="" src="image/tagine.jpg" alt="" style="border-radius: 10px">
         </div>

@@ -33,3 +33,5 @@ Route::get('/add-meals', function() {
 Route::post('/store-meals', [MealController::class, 'store']);
 
 Route::get('/home', [MealController::class, 'index'])->name('meals.index');
+
+Route::get('delete/{id}', [MealController::class, 'destroy']);

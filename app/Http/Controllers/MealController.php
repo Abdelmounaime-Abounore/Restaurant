@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Meal;
 use Illuminate\Http\Request;
+use DB; 
 
 class MealController extends Controller
 {
@@ -47,7 +48,12 @@ class MealController extends Controller
         $data->category = $request->input('category');
         $data->description = $request->input('description');
         $data->price = $request->input('price');
-        $data->photo = $request->input('photo');
+        if($image = $request->file('photo')) {
+            $image_path = 'image/';
+            $image_name = date('YmdHis').'.'.$image->getClientOriginalExtension();
+            $image->move($image_path, $image_name);
+            $data->photo =$image_name;
+        }
         $data->save();
         return redirect()
             ->route('meals.index');
@@ -92,8 +98,11 @@ class MealController extends Controller
      * @param  \App\Models\Meal  $meal
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Meal $meal)
+    public function destroy($id)
     {
-        //
+        $data = Meal::find($id);
+        $data->delete();
+        return redirect()
+            ->route('meals.index');
     }
 }
