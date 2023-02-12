@@ -11,19 +11,19 @@
                     <div class="row py-2">
                         <div class="col-md-6">
                             <label for="firstname">Name</label>
-                            <input type="text" name="name" class="bg-light form-control" value={{$user->name}}>
+                            <input type="text" name="name" class="bg-light form-control" value={{$user->name}} required>
                         </div>
                     </div>
                     <div class="row py-2">
                         <div class="col-md-6">
                             <label for="firstname">E-mail</label>
-                            <input type="email" name="email" class="bg-light form-control" value={{$user->email}}>
+                            <input type="email" name="email" class="bg-light form-control" value={{$user->email}} required>
                         </div>
                     </div>
                     <div class="row py-2">
                         <div class="col-md-6">
                             <label for="password">Password</label>
-                            <input type="password" name="password" class="bg-light form-control">
+                            <input type="password" name="password" class="bg-light form-control" required>
                         </div>
                     </div>
                     <div class="py-3 pb-4 border-bottom">

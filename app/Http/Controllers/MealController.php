@@ -44,6 +44,13 @@ class MealController extends Controller
     public function store(Request $request)
     {
         $data = new Meal;
+        $request->validate([
+            'name' => 'required',
+            'category' => 'required',
+            'description' => 'required',
+            'price' => 'required',
+            'photo' => 'required|image|mimes:jpeg,png,jbg,gif,svg',
+        ]);
         $data->name = $request->input('name');
         $data->category = $request->input('category');
         $data->description = $request->input('description');
