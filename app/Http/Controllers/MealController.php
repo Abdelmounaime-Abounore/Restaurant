@@ -53,7 +53,7 @@ class MealController extends Controller
             $image_name = date('YmdHis').'.'.$image->getClientOriginalExtension();
             $image->move($image_path, $image_name);
             $data->photo =$image_name;
-        }
+        } 
         $data->save();
         return redirect()
             ->route('meals.index');

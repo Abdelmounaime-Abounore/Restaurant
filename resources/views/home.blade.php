@@ -8,7 +8,7 @@
                 <span class="text-success font-weight-bold" style="font-size: 15px">Price: {{$meal->price}} DHS</span> <br><br>
                 <a href="delete/{{ $meal->id }}" class="btn btn-danger"> Delete </a>
             </article>
-            <img class="" src="image/tagine.jpg" alt="" style="border-radius: 10px">
+            <img class="" src="{{URL::asset('image/'.$meal->photo)}}" alt="" style="border-radius: 10px">
         </div>
     @endforeach      
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

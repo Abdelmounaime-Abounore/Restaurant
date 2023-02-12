@@ -1,6 +1,6 @@
 @include('layouts.master')
 
-<form class="myForm w-75 m-auto bg-light p-4 my-3" id="myForm" method="POST" action="/store-meals">
+<form class="myForm w-75 m-auto bg-light p-4 my-3" id="myForm" enctype="multipart/form-data" method="POST" action="/store-meals">
     <div class="div_form">
         @csrf
         <div class="form-group my-3">
@@ -9,8 +9,8 @@
         </div>
         <div class="form-group my-3">
           <label for="formGroupExampleInput2">Category</label>
-          <select class="form-control form-control p-2" name="category">
-              <option id="">Select Your Choice ..</option>
+          <select class="form-control form-control p-2" name="category" required>
+              <option>Select Your Choice ..</option>
               <option value="Breakfasts">Breakfasts</option>
               <option value="Moroccan meals">Moroccan meals</option>
               <option value="Italian meals">Italian meals</option>
