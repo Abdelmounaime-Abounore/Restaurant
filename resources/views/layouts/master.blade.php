@@ -30,7 +30,6 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            {{-- <a class="dropdown-item" href="edit/1"> Settings</a> --}}
                             <a class="dropdown-item" href="edit/{{Auth::user()->id}}"> Settings</a>
                             
                             <a class="dropdown-item" href="{{ route('logout') }}"

@@ -7,6 +7,7 @@
                 <p>{{$meal->description}}</p>
                 <span class="text-success font-weight-bold" style="font-size: 15px">Price: {{$meal->price}} DHS</span> <br><br>
                 <a href="delete/{{ $meal->id }}" class="btn btn-danger"> Delete </a>
+                <a href="edit-meal/{{ $meal->id }}" class="btn btn-secondary mx-1"> Edit </a>
             </article>
             <img class="" src="{{URL::asset('image/'.$meal->photo)}}" alt="" style="border-radius: 10px">
         </div>

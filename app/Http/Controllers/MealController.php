@@ -40,7 +40,7 @@ class MealController extends Controller
     {
         return view('add-meals');
     }
-
+    
     public function store(Request $request)
     {
         $data = new Meal;
@@ -94,10 +94,10 @@ class MealController extends Controller
      * @param  \App\Models\Meal  $meal
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Meal $meal)
-    {
-        //
-    }
+    // public function update(Request $request, Meal $meal)
+    // {
+    //     //
+    // }
 
     /**
      * Remove the specified resource from storage.
@@ -109,6 +109,35 @@ class MealController extends Controller
     {
         $data = Meal::find($id);
         $data->delete();
+        return redirect()
+            ->route('meals.index');
+    }
+
+    public function showData($id) {
+        $data = Meal::find($id);
+        return view('edit-meal', ['data'=>$data]);
+    }
+
+    public function update(Request $request){
+        $request->validate([
+            'name' => 'required',
+            'category' => 'required',
+            'description' => 'required',
+            'price' => 'required',
+            'photo' => 'required|image|mimes:jpeg,png,jbg,gif,svg',
+        ]);
+        $data = Meal::find($request->id);
+        $data->name = $request->name;       
+        $data->	category = $request->category;       
+        $data->description = $request->description;       
+        $data->price = $request->price;       
+        if($image = $request->file('photo')) {
+            $image_path = 'image/';
+            $image_name = date('YmdHis').'.'.$image->getClientOriginalExtension();
+            $image->move($image_path, $image_name);
+            $data->photo =$image_name;
+        }      
+        $data->save();
         return redirect()
             ->route('meals.index');
     }
