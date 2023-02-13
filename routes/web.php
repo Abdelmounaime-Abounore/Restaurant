@@ -22,7 +22,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/edit/{id}', [HomeController::class,'settings'])->name('edit');
+Route::get('/edit/{id}', [HomeController::class,'settings'])->name('settings');
 
 Route::post('edit', [HomeController::class,'update'])->name('edit');
 

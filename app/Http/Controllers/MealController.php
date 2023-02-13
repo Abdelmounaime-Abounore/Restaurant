@@ -16,6 +16,7 @@ class MealController extends Controller
     public function index()
     {
         $meals = Meal::all();
+
         return view('home',['meals'=>$meals]);
 
     }
@@ -25,10 +26,6 @@ class MealController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -71,10 +68,6 @@ class MealController extends Controller
      * @param  \App\Models\Meal  $meal
      * @return \Illuminate\Http\Response
      */
-    public function show(Meal $meal)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -82,11 +75,7 @@ class MealController extends Controller
      * @param  \App\Models\Meal  $meal
      * @return \Illuminate\Http\Response
      */
-    public function edit(Meal $meal)
-    {
-        //
-    }
-
+   
     /**
      * Update the specified resource in storage.
      *
@@ -94,10 +83,6 @@ class MealController extends Controller
      * @param  \App\Models\Meal  $meal
      * @return \Illuminate\Http\Response
      */
-    // public function update(Request $request, Meal $meal)
-    // {
-    //     //
-    // }
 
     /**
      * Remove the specified resource from storage.
@@ -135,7 +120,7 @@ class MealController extends Controller
             $image_path = 'image/';
             $image_name = date('YmdHis').'.'.$image->getClientOriginalExtension();
             $image->move($image_path, $image_name);
-            $data->photo =$image_name;
+            $data->photo = $image_name;
         }      
         $data->save();
         return redirect()

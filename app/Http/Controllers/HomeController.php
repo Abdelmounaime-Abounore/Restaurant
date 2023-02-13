@@ -30,11 +30,7 @@ class HomeController extends Controller
 
     public function settings($id)
     {
-        // dd($id) ;
         $user = User::find($id);
-        // dd($user) ;
-        // dd( $user->email);
-        // return view('edit')->with('user', $user) ;
         return view('edit', compact('user'));
     }
 
