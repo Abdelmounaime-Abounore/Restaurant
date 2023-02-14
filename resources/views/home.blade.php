@@ -1,5 +1,5 @@
 @include('layouts.master')
-    @foreach ($meals as $meal)
+    @foreach ( $meals as $meal)
         <div class="d-block d-md-flex flex-row align-items-center w-75 m-auto my-5 p-3" style="background-color: rgb(248, 248, 230); border-radius: 10px">
             <article class="mx-4">
                 <h2>{{ $meal->name }}</h2>

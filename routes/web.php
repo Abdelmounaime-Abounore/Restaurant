@@ -39,3 +39,5 @@ Route::get('delete/{id}', [MealController::class, 'destroy']);
 Route::get('edit-meal/{id}', [MealController::class, 'showData']);
 
 Route::post('edit-meals', [MealController::class, 'update']);
+
+Route::get('/',[MealController::class, 'index2']);

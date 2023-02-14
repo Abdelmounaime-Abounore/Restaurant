@@ -18,7 +18,15 @@ class MealController extends Controller
         $meals = Meal::all();
 
         return view('home',['meals'=>$meals]);
+        
+    }
+    
+    public function index2()
+    {
+        $meals = Meal::all();
 
+        return view('welcome',compact('meals'));
+        
     }
 
     /**
